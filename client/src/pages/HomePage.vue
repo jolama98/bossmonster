@@ -1,12 +1,15 @@
 <script setup>
+import BossCard from '@/components/BossCard.vue';
 import PlayerCard from '@/components/PlayerCard.vue';
+
 </script>
 
 <template>
   <div class="container-fluid ">
     <div class="row">
+      <h1 class="d-flex justify-content-center">Heros</h1>
       <div class="col-12">
-        <div class="pb-3">
+        <div class="pb-3 d-flex justify-content-around">
           <PlayerCard />
         </div>
       </div>
@@ -15,9 +18,7 @@ import PlayerCard from '@/components/PlayerCard.vue';
     <div class="row">
       <div class="col-12">
         <div class="d-flex justify-content-center">
-          <img class="boss-monster img-fluid border border-4 border-dark rounded-5"
-            src="https://www.investopedia.com/thmb/xXU54x-dkZf9WRNAYqZs6ECcCTg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/single-word-taxes-on-wooden-block-1132754811-f3ef431cc47a4be3a49223b20774845f.jpg"
-            alt="">
+          <BossCard />
         </div>
       </div>
     </div>
