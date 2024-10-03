@@ -1,0 +1,33 @@
+// vite.config.js
+import { fileURLToPath, URL } from "node:url";
+import { defineConfig } from "file:///Users/josehehall89gmail.com/Desktop/codeTrash/bossmonster/client/node_modules/vite/dist/node/index.js";
+import vue from "file:///Users/josehehall89gmail.com/Desktop/codeTrash/bossmonster/client/node_modules/@vitejs/plugin-vue/dist/index.mjs";
+import vueDevTools from "file:///Users/josehehall89gmail.com/Desktop/codeTrash/bossmonster/client/node_modules/vite-plugin-vue-devtools/dist/vite.mjs";
+import eslintPlugin from "file:///Users/josehehall89gmail.com/Desktop/codeTrash/bossmonster/client/node_modules/vite-plugin-eslint/dist/index.mjs";
+var __vite_injected_original_import_meta_url = "file:///Users/josehehall89gmail.com/Desktop/codeTrash/bossmonster/client/vite.config.js";
+var vite_config_default = defineConfig({
+  plugins: [
+    vue(),
+    vueDevTools(),
+    eslintPlugin({
+      overrideConfigFile: "eslint.config.js"
+    })
+  ],
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", __vite_injected_original_import_meta_url))
+    }
+  },
+  build: {
+    sourcemap: false
+  },
+  server: {
+    port: 8080
+  }
+  // NOTE If deploying to gh-pages uncomment the line below (https://vitejs.dev/config/shared-options.html#base)
+  // base: '/bossmonster/'
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCIvVXNlcnMvam9zZWhlaGFsbDg5Z21haWwuY29tL0Rlc2t0b3AvY29kZVRyYXNoL2Jvc3Ntb25zdGVyL2NsaWVudFwiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9maWxlbmFtZSA9IFwiL1VzZXJzL2pvc2VoZWhhbGw4OWdtYWlsLmNvbS9EZXNrdG9wL2NvZGVUcmFzaC9ib3NzbW9uc3Rlci9jbGllbnQvdml0ZS5jb25maWcuanNcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfaW1wb3J0X21ldGFfdXJsID0gXCJmaWxlOi8vL1VzZXJzL2pvc2VoZWhhbGw4OWdtYWlsLmNvbS9EZXNrdG9wL2NvZGVUcmFzaC9ib3NzbW9uc3Rlci9jbGllbnQvdml0ZS5jb25maWcuanNcIjtpbXBvcnQgeyBmaWxlVVJMVG9QYXRoLCBVUkwgfSBmcm9tICdub2RlOnVybCdcbmltcG9ydCB7IGRlZmluZUNvbmZpZyB9IGZyb20gJ3ZpdGUnXG5pbXBvcnQgdnVlIGZyb20gJ0B2aXRlanMvcGx1Z2luLXZ1ZSdcbmltcG9ydCB2dWVEZXZUb29scyBmcm9tICd2aXRlLXBsdWdpbi12dWUtZGV2dG9vbHMnXG5pbXBvcnQgZXNsaW50UGx1Z2luIGZyb20gJ3ZpdGUtcGx1Z2luLWVzbGludCdcblxuXG4vLyBodHRwczovL3ZpdGVqcy5kZXYvY29uZmlnL1xuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgcGx1Z2luczogW1xuICAgIHZ1ZSgpLFxuICAgIHZ1ZURldlRvb2xzKCksXG4gICAgZXNsaW50UGx1Z2luKHtcbiAgICAgIG92ZXJyaWRlQ29uZmlnRmlsZTogJ2VzbGludC5jb25maWcuanMnLFxuICAgIH0pLFxuICBdLFxuICByZXNvbHZlOiB7XG4gICAgYWxpYXM6IHtcbiAgICAgICdAJzogZmlsZVVSTFRvUGF0aChuZXcgVVJMKCcuL3NyYycsIGltcG9ydC5tZXRhLnVybCkpXG4gICAgfVxuICB9LFxuICBidWlsZDoge1xuICAgIHNvdXJjZW1hcDogZmFsc2UsXG4gIH0sXG4gIHNlcnZlcjoge1xuICAgIHBvcnQ6IDgwODBcbiAgfSxcblxuICAvLyBOT1RFIElmIGRlcGxveWluZyB0byBnaC1wYWdlcyB1bmNvbW1lbnQgdGhlIGxpbmUgYmVsb3cgKGh0dHBzOi8vdml0ZWpzLmRldi9jb25maWcvc2hhcmVkLW9wdGlvbnMuaHRtbCNiYXNlKVxuICAvLyBiYXNlOiAnL2Jvc3Ntb25zdGVyLydcbn0pXG5cbiJdLAogICJtYXBwaW5ncyI6ICI7QUFBcVgsU0FBUyxlQUFlLFdBQVc7QUFDeFosU0FBUyxvQkFBb0I7QUFDN0IsT0FBTyxTQUFTO0FBQ2hCLE9BQU8saUJBQWlCO0FBQ3hCLE9BQU8sa0JBQWtCO0FBSmlOLElBQU0sMkNBQTJDO0FBUTNSLElBQU8sc0JBQVEsYUFBYTtBQUFBLEVBQzFCLFNBQVM7QUFBQSxJQUNQLElBQUk7QUFBQSxJQUNKLFlBQVk7QUFBQSxJQUNaLGFBQWE7QUFBQSxNQUNYLG9CQUFvQjtBQUFBLElBQ3RCLENBQUM7QUFBQSxFQUNIO0FBQUEsRUFDQSxTQUFTO0FBQUEsSUFDUCxPQUFPO0FBQUEsTUFDTCxLQUFLLGNBQWMsSUFBSSxJQUFJLFNBQVMsd0NBQWUsQ0FBQztBQUFBLElBQ3REO0FBQUEsRUFDRjtBQUFBLEVBQ0EsT0FBTztBQUFBLElBQ0wsV0FBVztBQUFBLEVBQ2I7QUFBQSxFQUNBLFFBQVE7QUFBQSxJQUNOLE1BQU07QUFBQSxFQUNSO0FBQUE7QUFBQTtBQUlGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==

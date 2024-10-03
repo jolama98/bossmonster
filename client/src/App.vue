@@ -1,6 +1,7 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
 import { AppState } from './AppState.js';
+import HomePage from './pages/HomePage.vue';
 
 </script>
 
@@ -9,10 +10,10 @@ import { AppState } from './AppState.js';
     <Navbar />
   </header>
   <main>
-    <router-view />
+    <HomePage />
   </main>
   <footer class="bg-dark text-light">
-    Made with 💖 by CodeWorks
+
   </footer>
 </template>
 
