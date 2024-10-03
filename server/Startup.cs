@@ -1,3 +1,5 @@
+using bossmonstervuedotnet.Repositories;
+using bossmonstervuedotnet.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +35,9 @@ public class Startup
 
     services.AddScoped<AccountsRepository>();
     services.AddScoped<AccountService>();
+    
+    services.AddScoped<HeroRepository>();
+    services.AddScoped<HeroService>();
   }
 
   private void ConfigureCors(IServiceCollection services)
