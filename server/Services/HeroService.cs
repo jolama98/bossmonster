@@ -1,16 +1,16 @@
 namespace bossmonster.Services;
 
-public class HeroService
+public class HeroesService
 {
-    private readonly HerosRepository _herosRepository;
-    public HeroService(HerosRepository herosRepository)
+    private readonly HeroesRepository _heroesRepository;
+    public HeroesService(HeroesRepository heroesRepository)
     {
-        _heroRepository = heroRepository;
+        _heroesRepository = heroesRepository;
     }
 
     internal List<Hero> GetAllHeros()
     {
-        return _heroRepository.GetAllHeroes();
+        return _heroesRepository.GetAllHeroes();
     }
 
 

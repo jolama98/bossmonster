@@ -1,10 +1,10 @@
 
 namespace bossmonster.Repositories;
-public class HerosRepository
+public class HeroesRepository
 {
     private readonly IDbConnection _db;
 
-    public HerosRepository(IDbConnection db)
+    public HeroesRepository(IDbConnection db)
     {
         _db = db;
     }

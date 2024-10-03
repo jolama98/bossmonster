@@ -7,10 +7,10 @@ public class HerosController : ControllerBase
 {
 
     private readonly Auth0Provider _auth0Provider;
-    private readonly HeroService _heroService;
-    public HerosController(HerosService herosService, Auth0Provider auth0Provider)
+    private readonly HeroesService _heroesService;
+    public HerosController(HeroesService heroesService, Auth0Provider auth0Provider)
     {
-        _heroService = heroService;
+        _heroesService = heroesService;
         _auth0Provider = auth0Provider;
     }
     [HttpGet]
@@ -18,7 +18,7 @@ public class HerosController : ControllerBase
     {
         try
         {
-            List<Hero> heros = _herosService.GetAllHeros();
+            List<Hero> heros = _heroesService.GetAllHeros();
             return Ok(heros);
 
         }
