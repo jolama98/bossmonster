@@ -1,10 +1,10 @@
 
-namespace bossmonstervuedotnet.Repositories;
-public class HeroRepository
+namespace bossmonster.Repositories;
+public class HerosRepository
 {
     private readonly IDbConnection _db;
 
-    public HeroRepository(IDbConnection db)
+    public HerosRepository(IDbConnection db)
     {
         _db = db;
     }

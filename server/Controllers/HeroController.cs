@@ -1,14 +1,14 @@
-namespace bossmonstervuedotnet.Controllers;
+namespace bossmonster.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 
-public class HeroController : ControllerBase
+public class HerosController : ControllerBase
 {
 
     private readonly Auth0Provider _auth0Provider;
     private readonly HeroService _heroService;
-    public HeroController(HeroService heroService, Auth0Provider auth0Provider)
+    public HerosController(HerosService herosService, Auth0Provider auth0Provider)
     {
         _heroService = heroService;
         _auth0Provider = auth0Provider;
@@ -18,7 +18,7 @@ public class HeroController : ControllerBase
     {
         try
         {
-            List<Hero> heros = _heroService.GetAllHeros();
+            List<Hero> heros = _herosService.GetAllHeros();
             return Ok(heros);
 
         }

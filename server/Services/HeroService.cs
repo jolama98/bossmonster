@@ -1,9 +1,9 @@
-namespace bossmonstervuedotnet.Services;
+namespace bossmonster.Services;
 
 public class HeroService
 {
-    private readonly HeroRepository _heroRepository;
-    public HeroService(HeroRepository heroRepository)
+    private readonly HerosRepository _herosRepository;
+    public HeroService(HerosRepository herosRepository)
     {
         _heroRepository = heroRepository;
     }
