@@ -1,7 +1,10 @@
 <script setup>
+import { logger } from '@/utils/Logger.js';
+
 
 function attack() {
-  console.log("hit");
+  logger.log("hit")
+
 }
 </script>
 

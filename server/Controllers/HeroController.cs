@@ -3,12 +3,12 @@ namespace bossmonster.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 
-public class HerosController : ControllerBase
+public class HeroesController : ControllerBase
 {
 
     private readonly Auth0Provider _auth0Provider;
     private readonly HeroesService _heroesService;
-    public HerosController(HeroesService heroesService, Auth0Provider auth0Provider)
+    public HeroesController(HeroesService heroesService, Auth0Provider auth0Provider)
     {
         _heroesService = heroesService;
         _auth0Provider = auth0Provider;

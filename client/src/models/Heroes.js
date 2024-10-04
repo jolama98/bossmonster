@@ -1,8 +1,7 @@
-import { DatabaseItem } from "./DatabaseItem.js"
 
-export class Heroes extends DatabaseItem {
+export class Heroes {
   constructor(data) {
-    super(data);
+    this.id = data.id;
     this.name = data.name;
     this.img = data.img;
     this.damage = data.damage;

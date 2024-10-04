@@ -19,11 +19,22 @@ INSERT INTO heroes(
   creatorId
 )
 VALUES(
-  "Aragorn",
-  "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5725f8b4-2d9e-4ef8-b0c1-328e99ca0987_720x405.webp
-",
-"Ranger",
+  "Galadriel",
+  "https://static.wikia.nocookie.net/lotr/images/c/c4/Theguardian-com-TRoP-Galadriel_in_Lindon-cropped_waist_up.jpg/revision/latest?cb=20240624021225",
+"Hot blonde",
 "10",
 "100",
 "6691cd264de80d398f94368a"
 );
+
+CREATE TABLE boss(
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+img VARCHAR(1000) NOT NULL,
+name VARCHAR(255) NOT NULL,
+damage INT NOT NULL DEFAULT 50,
+health INT NOT NULL DEFAULT 100,
+creatorId VARCHAR(255) NOT NULL,
+FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
+)
