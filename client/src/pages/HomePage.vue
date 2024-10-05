@@ -11,11 +11,11 @@ onMounted(() => {
   getAllHeroes()
 })
 
-async function getAllHeroes(){
+async function getAllHeroes() {
   try {
     await heroesService.getAllHeroes()
   }
-  catch (error){
+  catch (error) {
     Pop.error(error);
   }
 }
@@ -25,10 +25,10 @@ async function getAllHeroes(){
   <div class="container-fluid ">
     <div class="row">
       <h1 class="d-flex justify-content-center">Heros</h1>
-      <div class="col-12">
-        <div v-for="hero in heroes" :key="hero.id" class="pb-3 d-flex justify-content-around">
-          <PlayerCard  :hero-props="hero"/>
-        </div>
+    </div>
+    <div class="row justify-content-center ">
+      <div v-for="hero in heroes" :key="hero.id" class="col-md-3 col-6 align-content-center pb-4">
+        <PlayerCard :hero-props="hero" />
       </div>
     </div>
 

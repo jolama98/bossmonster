@@ -7,7 +7,7 @@ const props = defineProps({
 
 
 <template>
-  <div v-if="heroProps" class="card" style="width: 10rem;">
+  <div v-if="heroProps" class="card">
     <img :src="heroProps.img" class="card-img-top" alt="Aragorn">
     <div class="card-body">
       <h4 class="card-title fw-bold">{{ heroProps.name }}</h4>
@@ -23,5 +23,10 @@ const props = defineProps({
 p {
   padding: 0px;
   margin: 0px;
+}
+img{
+  // object-fit: fill;
+  object-fit: contain;
+
 }
 </style>

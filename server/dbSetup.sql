@@ -19,9 +19,9 @@ INSERT INTO heroes(
   creatorId
 )
 VALUES(
-  "Galadriel",
-  "https://static.wikia.nocookie.net/lotr/images/c/c4/Theguardian-com-TRoP-Galadriel_in_Lindon-cropped_waist_up.jpg/revision/latest?cb=20240624021225",
-"Hot blonde",
+  "Hulk",
+  "https://images-ng.pixai.art/images/orig/4664013c-a0d1-4ed9-a47e-ccc29ab69dea",
+"Monster",
 "10",
 "100",
 "6691cd264de80d398f94368a"
