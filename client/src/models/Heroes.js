@@ -9,5 +9,8 @@ export class Heroes {
     this.type = data.type;
     this.creatorId = data.creatorId;
   }
+  get backgroundImage() {
+    return `url(${this.img})`
+  }
 }
 

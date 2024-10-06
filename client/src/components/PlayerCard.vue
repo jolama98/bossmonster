@@ -24,9 +24,12 @@ p {
   padding: 0px;
   margin: 0px;
 }
-img{
-  // object-fit: fill;
-  object-fit: contain;
 
+
+.img {
+  min-height: 100%;
+  width: 100%;
+  object-fit: cover;
+  // background-image: v-bind('heroProps.backgroundImage');
 }
 </style>

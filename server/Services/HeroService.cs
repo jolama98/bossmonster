@@ -1,3 +1,4 @@
+
 namespace bossmonster.Services;
 
 public class HeroesService
@@ -8,10 +9,33 @@ public class HeroesService
         _heroesRepository = heroesRepository;
     }
 
+    internal string DestroyHero(int heroId, string userId)
+    {
+
+        Hero hero = GetHerosById(heroId);
+        if (hero.CreatorId != userId)
+        {
+            throw new Exception("YOU DID NOT CREATE THIS KEEP 'KEEP' AWAY");
+        }
+        _heroesRepository.DestroyHero(heroId);
+
+        return "Keep was DELETED!";
+    }
+
+
+
     internal List<Hero> GetAllHeros()
     {
         return _heroesRepository.GetAllHeroes();
     }
 
-
+    public Hero GetHerosById(int heroId)
+    {
+        Hero hero = _heroesRepository.GetHerosById(heroId);
+        if (hero == null)
+        {
+            throw new Exception($"No Hero found with the Id of {heroId}");
+        }
+        return hero;
+    }
 }

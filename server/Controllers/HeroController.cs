@@ -28,4 +28,36 @@ public class HeroesController : ControllerBase
         }
     }
 
+    [HttpGet("{heroId}")]
+    public ActionResult<Hero> GetHerosById(int heroId)
+    {
+        try
+        {
+            // Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+            Hero hero = _heroesService.GetHerosById(heroId);
+            return Ok(hero);
+        }
+        catch (Exception exception)
+        {
+            return BadRequest(exception.Message);
+        }
+    }
+
+
+    [Authorize]
+    [HttpDelete("{heroId}")]
+    public async Task<ActionResult<string>> DestroyHero(int heroId)
+    {
+        try
+        {
+            Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+            string message = _heroesService.DestroyHero(heroId, userInfo.Id);
+            return Ok(message);
+        }
+        catch (Exception exception)
+        {
+            return BadRequest(exception.Message);
+        }
+    }
+
 }

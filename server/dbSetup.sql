@@ -38,3 +38,10 @@ health INT NOT NULL DEFAULT 100,
 creatorId VARCHAR(255) NOT NULL,
 FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
 )
+
+
+SELECT heroes.*, accounts.*
+FROM heroes
+    JOIN accounts ON accounts.id = heroes.creatorId
+WHERE
+    heroes.id = @heroesId;
