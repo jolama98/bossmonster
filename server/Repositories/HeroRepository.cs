@@ -11,13 +11,32 @@ public class HeroesRepository
         _db = db;
     }
 
+    internal Hero CreateHero(Hero heroData)
+    {
+        string sql = @"
+        INSERT INTO
+        heroes( name, img, type, damage, health, creatorId)
+        VALUES( @name, @img, @type, @damage, @health, @creatorId);
+
+        SELECT
+        heroes.*,
+        accounts.*
+        FROM heroes
+        JOIN accounts ON accounts.id = heroes.creatorId
+        WHERE heroes.id = LAST_INSERT_ID();";
+        Hero hero = _db.Query<Hero, Profile, Hero>(sql, JoinCreator, heroData).FirstOrDefault();
+        return hero;
+
+    }
+
     internal void DestroyHero(int heroId)
     {
         string sql = "DELETE FROM heroes WHERE id = @heroId LIMIT 1";
+
         int rowsAffected = _db.Execute(sql, new { heroId });
-        
+
         if (rowsAffected == 0) throw new Exception("DELETE FAILED");
-        if (rowsAffected > 1) throw new Exception("DELETE DID NOT FAIL, BUT THAT IS STILL A PROBLEM");
+        if (rowsAffected > 1) throw new Exception("DELETE WAS OVER POWERED!!!!!!!");
 
     }
 

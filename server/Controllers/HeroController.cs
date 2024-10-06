@@ -60,4 +60,21 @@ public class HeroesController : ControllerBase
         }
     }
 
+    [Authorize]
+    [HttpPost]
+    public async Task<ActionResult<Hero>> CreateHero([FromBody] Hero heroData)
+    {
+        try
+        {
+            Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+            heroData.CreatorId = userInfo.Id;
+            Hero hero = _heroesService.CreateHero(heroData);
+            return Ok(hero);
+        }
+        catch (Exception exception)
+        {
+          return BadRequest(exception.Message);
+        }
+    }
+
 }

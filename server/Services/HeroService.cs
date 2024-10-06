@@ -19,7 +19,7 @@ public class HeroesService
         }
         _heroesRepository.DestroyHero(heroId);
 
-        return "Keep was DELETED!";
+        return "Hero was DELETED!";
     }
 
 
@@ -36,6 +36,12 @@ public class HeroesService
         {
             throw new Exception($"No Hero found with the Id of {heroId}");
         }
+        return hero;
+    }
+
+    internal Hero CreateHero(Hero heroData)
+    {
+        Hero hero = _heroesRepository.CreateHero(heroData);
         return hero;
     }
 }
