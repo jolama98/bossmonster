@@ -1,10 +1,12 @@
 <script setup>
 import { AppState } from '@/AppState.js';
 import BossCard from '@/components/BossCard.vue';
+import HeroForm from '../components/HeroForm.vue';
 import PlayerCard from '@/components/PlayerCard.vue';
 import { heroesService } from '@/services/HeroesService.js';
 import Pop from '@/utils/Pop.js';
 import { computed, onMounted } from 'vue';
+import ModalWrapper from '@/components/globals/ModalWrapper.vue';
 const heroes = computed(() => AppState.heroes)
 
 onMounted(() => {
@@ -37,6 +39,18 @@ async function getAllHeroes() {
         <div class="d-flex justify-content-center">
           <BossCard />
         </div>
+      </div>
+
+      <ModalWrapper id="hero-form">
+        <HeroForm />
+      </ModalWrapper>
+
+
+      <div class="d-flex justify-content-end sticky-bottom p-1">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hero-form">
+          Launch demo modal
+        </button>
       </div>
     </div>
 

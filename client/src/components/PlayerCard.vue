@@ -1,8 +1,26 @@
 <script setup>
 import { Heroes } from '@/models/Heroes.js';
+import { heroesService } from '@/services/HeroesService.js';
+import Pop from '@/utils/Pop.js';
 const props = defineProps({
   heroProps: { type: Heroes, required: true }
 })
+
+async function deleteHero() {
+  try {
+    const choice = await Pop.confirm("Are your sure?", 'delete Hero')
+    if (choice == false) {
+      Pop.toast("action canceled successfully", 'info', 'center')
+      return
+    }
+    await heroesService.deleteHero(props.heroProps.id)
+    Pop.success("Hero Deleted!")
+  }
+  catch (error) {
+    Pop.error(error);
+  }
+
+}
 </script>
 
 
@@ -15,6 +33,8 @@ const props = defineProps({
       <p class="card-text fw-bold">Damage: <span class="fw-medium">{{ heroProps.damage }}</span></p>
       <p class="card-text fw-bold ">Class: <span class="fw-medium">{{ heroProps.type }}</span></p>
     </div>
+    <button @click="deleteHero" class="btn btn-danger align-self-end m-1
+    ">Delete</button>
   </div>
 </template>
 
