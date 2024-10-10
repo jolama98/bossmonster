@@ -5,7 +5,7 @@ defineProps({ modalId: String })
 
 <template>
   <!-- NOTE we then assign that id to the modal so each instance of <ModalWrapper> can be unique -->
-  <div class="modal fade" :id="modalId">
+  <div class="modal fade" :id=modalId>
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-body">

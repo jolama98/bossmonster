@@ -48,8 +48,8 @@ async function getAllHeroes() {
 
       <div class="d-flex justify-content-end sticky-bottom p-1">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hero-form">
-          Launch demo modal
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hero-form">
+          Add Hero
         </button>
       </div>
     </div>
