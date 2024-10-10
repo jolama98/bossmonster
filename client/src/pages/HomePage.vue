@@ -6,7 +6,7 @@ import PlayerCard from '@/components/PlayerCard.vue';
 import { heroesService } from '@/services/HeroesService.js';
 import Pop from '@/utils/Pop.js';
 import { computed, onMounted } from 'vue';
-import ModalWrapper from '@/components/globals/ModalWrapper.vue';
+import ModalWrapper from '@/components/ModalWrapper.vue';
 const heroes = computed(() => AppState.heroes)
 
 onMounted(() => {
@@ -29,7 +29,7 @@ async function getAllHeroes() {
       <h1 class="d-flex justify-content-center">Heros</h1>
     </div>
     <div class="row justify-content-center ">
-      <div v-for="hero in heroes" :key="hero.id" class="col-md-3 col-6 align-content-center pb-4">
+      <div v-for="hero in heroes" :key="hero.id" class="col-md-2 col-6 align-content-center pb-4">
         <PlayerCard :hero-props="hero" />
       </div>
     </div>
@@ -48,7 +48,7 @@ async function getAllHeroes() {
 
       <div class="d-flex justify-content-end sticky-bottom p-1">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hero-form">
+        <button type="button" class="btn btn-success" data-bs-target="#hero-form" data-bs-toggle="modal">
           Add Hero
         </button>
       </div>

@@ -26,15 +26,23 @@ async function deleteHero() {
 
 <template>
   <div v-if="heroProps" class="card">
-    <img :src="heroProps.img" class="card-img-top" alt="Aragorn">
-    <div class="card-body">
-      <h4 class="card-title fw-bold">{{ heroProps.name }}</h4>
-      <p class="card-text fw-bold">Health: <span class="fw-medium">{{ heroProps.health }}</span></p>
-      <p class="card-text fw-bold">Damage: <span class="fw-medium">{{ heroProps.damage }}</span></p>
-      <p class="card-text fw-bold ">Class: <span class="fw-medium">{{ heroProps.type }}</span></p>
+    <div class="row">
+      <div class="col-2">
+        <img :src="heroProps.img" class="card-img-top avatar" alt="Aragorn">
+      </div>
+      <div class="col-9 d-flex align-items-center justify-content-center">
+        <h4 class="card-title fw-bold  ">{{ heroProps.name }}</h4>
+      </div>
+
+      <div class="card-body d-flex justify-content-around  ">
+        <p class="card-text fw-bold">Health: <span class="fw-medium">{{ heroProps.health }}</span></p>
+        <p class="card-text fw-bold">Damage: <span class="fw-medium">{{ heroProps.damage }}</span></p>
+        <p class="card-text fw-bold ">Class: <span class="fw-medium">{{ heroProps.type }}</span></p>
+      </div>
     </div>
+
     <button @click="deleteHero" class="btn btn-danger align-self-end m-1
-    ">Delete</button>
+          ">Delete</button>
   </div>
 </template>
 
@@ -45,11 +53,15 @@ p {
   margin: 0px;
 }
 
-
-.img {
-  min-height: 100%;
-  width: 100%;
+.card{
+  background-image: url(Heroes);
+}
+.avatar {
+  padding: 2px;
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
   object-fit: cover;
-  // background-image: v-bind('heroProps.backgroundImage');
 }
 </style>

@@ -3,7 +3,6 @@ import { logger } from '@/utils/Logger.js';
 
 
 function attack() {
-  logger.log("hit")
 
 }
 </script>

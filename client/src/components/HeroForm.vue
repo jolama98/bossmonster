@@ -34,7 +34,7 @@ async function createHero() {
       damage: 0,
       type: ''
     }
-    Modal.getOrCreateInstance('#createKeepModal').hide()
+    Modal.getOrCreateInstance('#hero-form').hide()
     Pop.success('Hero Added!')
   }
   catch (error) {
