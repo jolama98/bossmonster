@@ -29,7 +29,7 @@ async function getAllHeroes() {
       <h1 class="d-flex justify-content-center">Heros</h1>
     </div>
     <div class="row justify-content-center ">
-      <div v-for="hero in heroes" :key="hero.id" class="col-md-2 col-6 align-content-center pb-4">
+      <div v-for="hero in heroes" :key="hero.id" class="col-md-4 col-6 align-content-center pb-4">
         <PlayerCard :hero-props="hero" />
       </div>
     </div>

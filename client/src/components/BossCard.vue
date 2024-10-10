@@ -1,6 +1,8 @@
 <script setup>
+import { AppState } from '@/AppState.js';
 import { logger } from '@/utils/Logger.js';
-
+import { computed } from 'vue';
+const heroes = computed(() => AppState.heroes)
 
 function attack() {
 
