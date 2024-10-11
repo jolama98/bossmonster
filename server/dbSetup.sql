@@ -10,18 +10,16 @@ CREATE TABLE IF NOT EXISTS accounts(
 
 SELECT * FROM heroes;
 
-INSERT INTO heroes(
+INSERT INTO boss(
   name,
   img,
-  type,
   damage,
   health,
   creatorId
 )
 VALUES(
-  "Hulk",
-  "https://images-ng.pixai.art/images/orig/4664013c-a0d1-4ed9-a47e-ccc29ab69dea",
-"Monster",
+  "Taxes",
+  "https://www.investopedia.com/thmb/xXU54x-dkZf9WRNAYqZs6ECcCTg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/single-word-taxes-on-wooden-block-1132754811-f3ef431cc47a4be3a49223b20774845f.jpg",
 "10",
 "100",
 "6691cd264de80d398f94368a"

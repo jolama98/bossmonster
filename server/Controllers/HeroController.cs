@@ -1,5 +1,4 @@
 namespace bossmonster.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 

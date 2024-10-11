@@ -1,6 +1,5 @@
 
 namespace bossmonster.Services;
-
 public class HeroesService
 {
     private readonly HeroesRepository _heroesRepository;
