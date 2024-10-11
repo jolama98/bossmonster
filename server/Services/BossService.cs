@@ -20,9 +20,9 @@ public class BossService
     public Boss GetBossesById(int bossId)
     {
         Boss boss = _bossRepository.GetBossesById(bossId);
-        if(boss == null)
+        if (boss == null)
         {
-            throw new Exception($"No Hero found with the Id of {bossId}");
+            throw new Exception($"No Boss found with the Id of {bossId}");
         }
         return boss;
     }

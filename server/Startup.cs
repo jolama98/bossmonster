@@ -36,6 +36,9 @@ public class Startup
     
     services.AddScoped<HeroesRepository>();
     services.AddScoped<HeroesService>();
+
+    services.AddScoped<BossRepository>();
+    services.AddScoped<BossService>();
   }
 
   private void ConfigureCors(IServiceCollection services)
