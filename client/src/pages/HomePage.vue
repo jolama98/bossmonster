@@ -7,12 +7,23 @@ import { heroesService } from '@/services/HeroesService.js';
 import Pop from '@/utils/Pop.js';
 import { computed, onMounted } from 'vue';
 import ModalWrapper from '@/components/ModalWrapper.vue';
+import { bossService } from '@/services/BossService.js';
 const heroes = computed(() => AppState.heroes)
+const bosses = computed(() => AppState.boss)
 
 onMounted(() => {
   getAllHeroes()
+  getAllBosses()
 })
 
+async function getAllBosses() {
+try {
+  await bossService.getAllBosses()
+}
+catch (error){
+  Pop.error(error);
+}
+}
 async function getAllHeroes() {
   try {
     await heroesService.getAllHeroes()
@@ -30,14 +41,16 @@ async function getAllHeroes() {
     </div>
     <div class="row justify-content-center ">
       <div v-for="hero in heroes" :key="hero.id" class="col-md-4 col-6 align-content-center pb-4">
-        <PlayerCard :hero-props="hero" />
+        <PlayerCard :heroProps="hero" />
       </div>
     </div>
 
     <div class="row">
       <div class="col-12">
         <div class="d-flex justify-content-center">
-          <BossCard />
+          <div v-for="boss in bosses" :key="boss.id">
+            <BossCard :bossProps="boss" />
+          </div>
         </div>
       </div>
 

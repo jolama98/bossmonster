@@ -1,20 +1,26 @@
 <script setup>
-import { AppState } from '@/AppState.js';
-import { logger } from '@/utils/Logger.js';
-import { computed } from 'vue';
-const heroes = computed(() => AppState.heroes)
+import { Boss } from '@/models/Boss.js';
 
-function attack() {
+defineProps({
+  bossProps: { type: Boss, required: true }
+})
 
-}
 </script>
 
 
 <template>
+  <div v-if="bossProps">
+    <div class="row">
 
-  <img role="button" @click=" attack()" class="boss-monster img-fluid border border-4 border-dark rounded-5"
-    src="https://www.investopedia.com/thmb/xXU54x-dkZf9WRNAYqZs6ECcCTg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/single-word-taxes-on-wooden-block-1132754811-f3ef431cc47a4be3a49223b20774845f.jpg"
-    alt="">
+      <p>{{ bossProps.name }}</p>
+      <div class="col-3">
+        <img class="img-fluid" :src="bossProps.img" alt="">
+      </div>
+      <div class="col-7">
+        <p>{{ bossProps.health }}</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 

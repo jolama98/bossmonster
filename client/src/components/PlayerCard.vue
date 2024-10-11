@@ -34,14 +34,14 @@ async function deleteHero() {
         <h4 class="card-title fw-bold  ">{{ heroProps.name }}</h4>
       </div>
 
-      <div class="card-body d-flex justify-content-around  ">
-        <p class="card-text fw-bold">Health: <span class="fw-medium">{{ heroProps.health }}</span></p>
-        <p class="card-text fw-bold">Damage: <span class="fw-medium">{{ heroProps.damage }}</span></p>
-        <p class="card-text fw-bold ">Class: <span class="fw-medium">{{ heroProps.type }}</span></p>
-      </div>
-    </div>
+        <div class="card-body d-flex justify-content-around  ">
+          <p class="card-text fw-bold">Health: <span class="fw-medium">{{ heroProps.health }}</span></p>
+          <p class="card-text fw-bold">Damage: <span class="fw-medium">{{ heroProps.damage }}</span></p>
+          <p class="card-text fw-bold ">Class: <span class="fw-medium">{{ heroProps.type }}</span></p>
+        </div>
 
-    <button @click="deleteHero" class="btn btn-danger align-self-end m-1
+      </div>
+          <button @click="deleteHero" class="btn btn-danger align-self-end m-1
           ">Delete</button>
   </div>
 </template>
@@ -53,9 +53,6 @@ p {
   margin: 0px;
 }
 
-.card{
-  background-image: url(Heroes);
-}
 .avatar {
   padding: 2px;
   vertical-align: middle;

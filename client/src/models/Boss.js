@@ -7,7 +7,9 @@ export class Boss {
     this.health = data.health;
     this.creatorId = data.creatorId;
   }
-  get backgroundImage() {
-    return `url(${this.img})`
+  get backgroundStyle() {
+    return {
+      backgroundImage: `url(${this.img})`
+    }
   }
 }
